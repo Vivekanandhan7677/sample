@@ -69,5 +69,57 @@ hobby3<input type="checkbox" name="x[]" value="h3" name="h3"/>
 </tr>
 </table>
 </form>
+  <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyTRSc7wm1CJmMgxgTpezyotoj62sy7ZWB1Yss8fNaDkdR3drFNH_74BXNIG_RavszM5w/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const Success=document.getElementById('success');
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                success.innerHTML="Data successfully submitted";
+                setTimeout(function(){
+                    success.innerHTML="";
+                },5000)
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+        function showSuccessMessage() {
+        alert("Success! Your form has been submitted.");
+    }
+     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwQRoM5B2RaZqUlQi61d42q-tOr43XndFz8TdsDG-fJEyrI-Uaz0P-JKSIdblAoeesgrQ/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const Success=document.getElementById('success');
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                success.innerHTML="Data successfully submitted";
+                setTimeout(function(){
+                    success.innerHTML="";
+                },5000)
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+        function showSuccessMessage() {
+        alert("Success! Your form has been submitted.");
+    }
+      </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
 </body>
+  
 </html>
